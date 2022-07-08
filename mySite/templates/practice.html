@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1 style="color: aqua;">Welcome to Home page</h1>
+    <strong>{{bdata}}</strong>
+    <h2>{{clist}}</h2>
+
+    <hr>
+    
+    {% for n in clist %}
+    <div class="mian-container">
+
+        <!-- ---------------- Use this for loop in django templates for counter or revcounter or first or last -------------------- -->
+
+        {{forloop.counter}} {{n}}
+        <!-- {{forloop.counter0}} {{n}} -->
+        <!-- {{forloop.revcounter}} {{n}} -->
+        <!-- {{forloop.first}} {{n}} -->
+        <!-- {{forloop.last}} {{n}} -->
+
+    </div>
+    {% endfor %}
+
+    <table style="margin: 30px;", border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+
+        {% for d in student_details %}
+
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    {% if numbers|length > 0 %}
+    {% for n in numbers %}
+
+        {% if n > 20 %}
+
+        <div>{{n}}</div>
+
+        {% endif %}
+
+
+    {% endfor %}
+
+    {% else %}
+        No data found
+
+    {% endif %}
+
+
+    <p style="background-color: crimson; color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eaque minus numquam quibusdam sapiente ducimus odio voluptatem architecto, repellat suscipit impedit esse assumenda in aliquid excepturi ipsam laborum autem. Cumque fugit, fuga modi odit molestiae vitae maxime quam vero nobis eaque! Voluptatum quidem tempora, asperiores ratione deleniti incidunt sapiente esse pariatur amet mollitia laborum magnam harum facilis cumque temporibus libero ipsam ducimus eos dolor possimus consectetur fugiat ex. Fugiat eligendi maxime rerum corporis quibusdam eaque vitae, ratione quis iusto? Non sequi dignissimos nam necessitatibus. Quae consequuntur illo dolorem facere. Magnam neque nemo odio? Dolore magni ad facilis dicta laborum in?</p>
+</body>
+</html>

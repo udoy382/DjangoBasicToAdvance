@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkSheet</title>
+</head>
+<body>
+    <h1>Mark Sheet</h1>
+    <div class="container">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <label for="#">Subject-1</label>
+            <input type="text" name="subject1" id="subject1"><br>
+            <label for="#">Subject-2</label>
+            <input type="text" name="subject2" id="subject2"><br>
+            <label for="#">Subject-3</label>
+            <input type="text" name="subject3" id="subject3"><br>
+            <label for="#">Subject-4</label>
+            <input type="text" name="subject4" id="subject4"><br>
+            <label for="#">Subject-5</label>
+            <input type="text" name="subject5" id="subject5"><br>
+
+            <button type="submit">Marksheet</button><br>
+
+            <label for="#">Totle</label>
+            <input type="text" value="{{total}}" name="output" id="output"><br>
+
+            <label for="#">Percentage</label>
+            <input type="text" value="{{pers}}" name="output" id="output"><br>
+
+            <label for="#">Division</label>
+            <input type="text" value="{{div}}" name="output" id="output"><br>
+        </form>
+    </div>
+</body>
+</html>

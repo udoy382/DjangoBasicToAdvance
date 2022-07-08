@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenodd</title>
+</head>
+<body>
+    <form action="#" method="post">
+        {% if error %}
+        <div class="alert">
+            <h1>Please Enter The Value</h1>
+        </div>
+        {% endif %}
+
+        {% csrf_token %}
+        <label for="#">Value-1</label>
+        <input type="text" name="num1" id="num1">
+
+        <button type="submit">Even | Odd</button>
+        <label for="#">Output</label>
+
+        <input type="text" value="{{c}}" name="output" id="output" placeholder="Output">
+    </form>
+</body>
+</html>

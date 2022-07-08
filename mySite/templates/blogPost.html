@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/utils.css'%}">
+    <link rel="stylesheet" href="{% static 'css/blogPost.css'%}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css'%}">
+
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <!-- <link rel="stylesheet" href="../css/utils.css"> -->
+    <!-- <link rel="stylesheet" href="../css/blogPost.css"> -->
+    <!-- <link rel="stylesheet" href="../css/mobile.css"> -->
+    <title>iBlog - Heaven for bloggers</title>
+</head>
+<body>
+    <div class="max-width-1 m-auto"><hr></div>
+
+    <div class="post-img">
+        <!-- <img src="../img/img1.png"> -->
+        <img src="{% static 'img/img1.png'%}" alt="#">
+    </div>
+
+    <div class="blog-post-content max-width-2 m-auto my-2">
+        <h1 class="font-1">{{newsDeatils.title}}</h1>
+        <div class="blogPost-meta">
+            <div class="author-info">
+                <div><b>By {{newsDeatils.author}}</b></div>
+                <div>11 Oct. 6 min read</div>
+            </div>
+            <div class="social">
+                <!-- <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png"></a> -->
+                <!-- <a href="https://www.instagram.com" target="_blank"><img src="../img/instagram.png"></a> -->
+                <!-- <a href="https://www.twitter.com" target="_blank"><img src="../img/twitter.png"></a> -->
+                <!-- <a href="https://www.linkedin.com" target="_blank"><img src="../img/linkedin.png"></a> -->
+
+                <a href="https://www.linkedin.com" target="_blank"><img src="{% static 'img/facebook.png'%}"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="{% static 'img/instagram.png'%}"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="{% static 'img/twitter.png'%}"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="{% static 'img/linkedin.png'%}"></a>
+            </div>
+        </div>
+
+        <div class="post-img">
+            {% if newsDeatils.news_image != NULL %}
+            <img src="/media/{{newsDeatils.news_image}}" alt="#">
+            {% endif %}
+        </div>
+        <!-- <div class="max-width-1 m-auto"><hr></div> -->
+        <p class="font1">{{newsDeatils.content|safe}}</p>
+    </div>
+    <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font-1">
+        <h2>People who red this aslo read</h2>
+        <div class="row">
+            <div class="home-article morePost">
+                <div class="home-article-img">
+                    <img src="../img/typewriter1.png" alt="Article">
+                </div>
+                <div class="home-article-content font-1 center">
+                    <a href="#"><h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3></a>
+                    <span>Author Name</span>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article morePost">
+                <div class="home-article-img">
+                    <img src="../img/typewriter1.png" alt="Article">
+                </div>
+                <div class="home-article-content font-1">
+                    <a href="#"><h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3></a>
+                    <span>Author Name</span>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+            <div class="home-article morePost">
+                <div class="home-article-img">
+                    <img src="../img/typewriter1.png" alt="Article">
+                </div>
+                <div class="home-article-content font-1">
+                    <a href="#"><h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3></a>
+                    <span>Author Name</span>
+                    <span>07 January | 6 min read</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer max-width-2 m-auto">
+        Copyright &copy; | iBlog.com
+    </div>
+</body>
+</html>
+{% endblock body %}
